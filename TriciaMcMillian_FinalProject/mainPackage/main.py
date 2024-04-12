@@ -8,3 +8,8 @@
 # Brief Description of the assignment:
 # Citations:
 # Anything else that's relevant:
+from decryptionPackage.decryption import *
+
+if __name__ == "__main__":
+    
+    
