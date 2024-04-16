@@ -9,22 +9,24 @@
 # Citations:
 # Anything else that's relevant:
 
-import json
+import json 
+from utilitiesPackage.EncryptedGroupHints_Spring_2024_Section_002 import *
+from utiltilesPackage.UCEnglish import *
 
-# Need to finish edititng to decrypt for Tricia McMillian 
-class decrypt_location(EncryptedGroupHints_Spring_2024_Section_002.json, UCEnglish.txt):
-    # Load encrypted data from JSON file
-    with open(eEncryptedGroupHints_Spring_2024_Section_002.json, 'r') as f:
-        encrypted_data = json.load(f)
-    
-    # Load English text file
-    with open(UCEnglish.txt, 'r', encoding='utf-8') as f:
-        english_text = f.readlines()
-    
-    # Decrypt location
-    decrypted_location = "Tricia McMillian"
-    for index in encrypted_data:
-        line_number = int(index)
-        decrypted_location += english_text[line_number - 1].strip() + " "
+import json 
 
-    return decrypted_location.strip()
+class DecryptLocation:
+    def decrypt(self):
+        with open("utiltiesPackage/EncryptedGroupHints_Spring_2024_Section_002.json", "r", encoding="utf-8") as file:
+            location_data = json.load(file)
+
+        # Search for the line containing "Tricia McMillian"
+        for line in location_data:
+            if "Tricia McMillian" in line:
+                # Split the line by tab to extract the fields
+                fields = line.strip().split("\t")
+                # Extract the location
+                location = fields[66]
+                # Return the location
+                return f"The location of Tricia McMillian is {location}."
+
