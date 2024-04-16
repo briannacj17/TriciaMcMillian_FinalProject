@@ -10,21 +10,21 @@
 # Anything else that's relevant:
 
 import json
-
-# Need to finish edititng to decrypt for Tricia McMillian 
-class decrypt_location(EncryptedGroupHints_Spring_2024_Section_002.json, UCEnglish.txt):
-    # Load encrypted data from JSON file
-    with open(eEncryptedGroupHints_Spring_2024_Section_002.json, 'r') as f:
-        encrypted_data = json.load(f)
+if __name__ == "__main__":
+       
+    # Assuming your JSON file is named "data.json"
+    file_path = "..\utilitiesPackage\\EncryptedGroupHints Spring 2024 Section 002.json"
     
-    # Load English text file
-    with open(UCEnglish.txt, 'r', encoding='utf-8') as f:
-        english_text = f.readlines()
     
-    # Decrypt location
-    decrypted_location = "Tricia McMillian"
-    for index in encrypted_data:
-        line_number = int(index)
-        decrypted_location += english_text[line_number - 1].strip() + " "
+    with open(file_path, 'r') as f:
+        data = json.load(f)
 
-    return decrypted_location.strip()
+# Extract specific data
+name = data['Tricia McMillan']
+
+
+# Print the extracted data
+print("Data:", name)
+
+
+
