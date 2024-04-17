@@ -29,4 +29,3 @@ class DecryptLocation:
                 location = fields[66]
                 # Return the location
                 return f"The location of Tricia McMillian is {location}."
-
