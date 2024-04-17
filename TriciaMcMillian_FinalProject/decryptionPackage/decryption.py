@@ -9,22 +9,23 @@
 # Citations:
 # Anything else that's relevant:
 
-import json
-if __name__ == "__main__":
-       
-    # Assuming your JSON file is named "data.json"
-    file_path = "..\utilitiesPackage\\EncryptedGroupHints Spring 2024 Section 002.json"
-    
-    
-    with open(file_path, 'r') as f:
-        data = json.load(f)
+import json 
+from utilitiesPackage.EncryptedGroupHints_Spring_2024_Section_002 import *
+from utiltilesPackage.UCEnglish import *
 
-# Extract specific data
-name = data['Tricia McMillan']
+import json 
 
+class DecryptLocation:
+    def decrypt(self):
+        with open("utiltiesPackage/EncryptedGroupHints_Spring_2024_Section_002.json", "r", encoding="utf-8") as file:
+            location_data = json.load(file)
 
-# Print the extracted data
-print("Data:", name)
-
-
-
+        # Search for the line containing "Tricia McMillian"
+        for line in location_data:
+            if "Tricia McMillian" in line:
+                # Split the line by tab to extract the fields
+                fields = line.strip().split("\t")
+                # Extract the location
+                location = fields[66]
+                # Return the location
+                return f"The location of Tricia McMillian is {location}."
